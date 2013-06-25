@@ -4,7 +4,6 @@
 #include <SDL/SDL_image.h>
 #include <SDL/SDL_ttf.h>
 
-
 int	checkfile(int fd,char* buff);
 void	checkmap();
 
@@ -26,15 +25,17 @@ class case_map
 	SDL_Surface	*case_rect;
 	SDL_Rect	position;
 	int	id;
+	int	type;
 
 };
 
 class terrain_map
 {
 	SDL_Surface	*herb_case;
+	SDL_Surface	*rock_case;
+	public:
 	case_map	*id_case;
 	int	size_map;
-	public:
 	terrain_map(int sizeM);
 	void generate_all();
 	void show_all(SDL_Surface *ecran);
@@ -85,4 +86,5 @@ class	characters
 
 };
 
+int     detect_colli(terrain_map *terrain, int  pos, int x , int y);
 #endif

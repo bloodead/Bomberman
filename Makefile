@@ -4,7 +4,8 @@ SRC=	main.cpp	\
 	terrain_init.cpp\
 	readsrc.cpp\
 	menu.cpp\
-	characters.cpp
+	characters.cpp\
+	collision.cpp
 G=	g++ -g
 OBJS	=	$(SRC:.cpp=.o)
 LFLAGS=	-lSDL -lSDL_image -lSDL_ttf

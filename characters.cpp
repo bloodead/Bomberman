@@ -19,23 +19,25 @@ characters::characters(SDL_Surface *ecran)
 
 void	characters::run(SDL_Surface* ecran, terrain_map* terrainbomber, int pos)
 {
+	if (detect_colli(terrainbomber,pos,source.y, source.x))
+		pos = 5;
 	switch (pos)
 	{
 		case 1:
 			dest.y = 32;
-			source.x += 1;
+			source.x += 2;
 		break;
 		case 2:
 			dest.y = 96;
-			source.x -= 1;
+			source.x -= 2;
 		break;
 		case 3:
 			dest.y = 0;
-			source.y -= 1;
+			source.y -= 2;
 		break;
 		case 4:
 			dest.y = 64;
-			source.y += 1;
+			source.y += 2;
 		break;
 	}
 
